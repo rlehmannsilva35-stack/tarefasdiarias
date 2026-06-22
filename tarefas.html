@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lista de Tarefas Diária</title>
+  <link rel="stylesheet" href="tarefas.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Minha Lista Diária</h1>
+    <form id="form-tarefa">
+      <input id="nova-tarefa" type="text" placeholder="Adicionar nova tarefa..." autocomplete="off">
+      <button type="submit">Adicionar</button>
+    </form>
+
+    <ul id="lista-tarefas"></ul>
+
+    <div class="controls">
+      <button id="limpar-concluidas">Limpar concluídas</button>
+      <button id="marcar-todas">Marcar todas</button>
+    </div>
+  </main>
+
+  <script src="tarefas.js"></script>
+</body>
+</html>
