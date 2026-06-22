@@ -9,14 +9,31 @@
 <body>
   <main class="card">
     <div class="header">
-      <h1>Minha Lista Diária</h1>
-      <p class="subtitle">Organize suas tarefas do dia de forma rápida e elegante.</p>
+      <div>
+        <span class="badge">Novo</span>
+        <h1>Minha Lista Diária</h1>
+        <p class="subtitle">Organize o dia com foco e produtividade.</p>
+      </div>
+      <div class="summary">
+        <div>
+          <strong id="total-tarefas">0</strong>
+          <small>Tarefas</small>
+        </div>
+        <div>
+          <strong id="tarefas-concluidas">0</strong>
+          <small>Concluídas</small>
+        </div>
+      </div>
     </div>
 
     <form id="form-tarefa">
       <input id="nova-tarefa" type="text" placeholder="Adicionar nova tarefa..." autocomplete="off">
       <button type="submit">Adicionar</button>
     </form>
+
+    <div class="status-bar">
+      <span id="status-info">Nenhuma tarefa ainda. Adicione algo para começar.</span>
+    </div>
 
     <ul id="lista-tarefas"></ul>
 
