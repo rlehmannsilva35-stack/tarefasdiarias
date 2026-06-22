@@ -12,10 +12,27 @@ function salvar() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(tarefas));
 }
 
+function atualizarStatus() {
+  const total = tarefas.length;
+  const concluidas = tarefas.filter(t => t.done).length;
+  document.getElementById('total-tarefas').textContent = total;
+  document.getElementById('tarefas-concluidas').textContent = concluidas;
+  const statusInfo = document.getElementById('status-info');
+
+  if (total === 0) {
+    statusInfo.textContent = 'Nenhuma tarefa ainda. Adicione algo para começar.';
+  } else if (concluidas === total) {
+    statusInfo.textContent = 'Parabéns! Todas as tarefas foram concluídas.';
+  } else {
+    statusInfo.textContent = `${total - concluidas} tarefa(s) pendente(s). Continue firme!`;
+  }
+}
+
 function render() {
   lista.innerHTML = '';
+  atualizarStatus();
   if (tarefas.length === 0) {
-    lista.innerHTML = '<li class="tarefa"><label>Nenhuma tarefa</label></li>';
+    lista.innerHTML = '<li class="tarefa placeholder"><label>Nenhuma tarefa</label></li>';
     return;
   }
 
@@ -68,10 +85,27 @@ btnLimpar.addEventListener('click', () => {
 });
 
 btnMarcarTodas.addEventListener('click', () => {
-  const allDone = tarefas.every(t => t.done);
+  const allDone = tarefas.length > 0 && tarefas.every(t => t.done);
   tarefas = tarefas.map(t => ({...t, done: !allDone}));
   salvar();
   render();
 });
+
+const themeToggle = document.getElementById('theme-toggle');
+const DARK_MODE_KEY = 'tarefasdiarias_dark_mode';
+
+function aplicarTema(escuro) {
+  document.body.classList.toggle('dark-mode', escuro);
+  themeToggle.textContent = escuro ? 'Modo claro' : 'Modo escuro';
+  localStorage.setItem(DARK_MODE_KEY, escuro ? '1' : '0');
+}
+
+themeToggle.addEventListener('click', () => {
+  const estaEscuro = document.body.classList.contains('dark-mode');
+  aplicarTema(!estaEscuro);
+});
+
+const temaSalvo = localStorage.getItem(DARK_MODE_KEY) === '1';
+aplicarTema(temaSalvo);
 
 render();

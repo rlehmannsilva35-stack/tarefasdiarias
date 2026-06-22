@@ -1,32 +1,53 @@
-body{font-family:'Inter',Arial,Helvetica,sans-serif;background:radial-gradient(circle at top,#eff8ff 0%,#cfe0fc 40%,#f3f7ff 100%);margin:0;padding:32px;min-height:100vh;display:flex;align-items:center;justify-content:center;color:#102a43}
+body{font-family:'Inter',Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#ffe7d6 0%,#fff3e0 38%,#fffdfa 100%);margin:0;padding:32px;min-height:100vh;display:flex;align-items:center;justify-content:center;color:#3b1f04}
 *{box-sizing:border-box}
-button, input{font-family:inherit}
-.card{background:rgba(255,255,255,.96);padding:36px;border-radius:32px;box-shadow:0 32px 90px rgba(15,23,42,.12);width:100%;max-width:560px;border:1px solid rgba(255,255,255,.9)}
+button,input{font-family:inherit}
+.card{background:rgba(255,249,240,.98);padding:36px;border-radius:32px;box-shadow:0 32px 90px rgba(108,63,35,.12);width:100%;max-width:560px;border:1px solid rgba(255,255,255,.8)}
 .header{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:24px}
 .header > div{max-width:65%}
-h1{margin:0;font-size:2.25rem;letter-spacing:-.04em;color:#102a43}
-.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;font-size:.8rem;font-weight:700;text-transform:uppercase;background:rgba(59,130,246,.12);color:#2563eb;margin-bottom:12px}
-.subtitle{margin:8px 0 0;color:#52637a;line-height:1.6}
-.summary{display:flex;gap:18px;align-items:center}
-.summary div{background:rgba(59,130,246,.08);padding:12px 16px;border-radius:16px;min-width:104px;text-align:center}
-.summary strong{display:block;font-size:1.4rem;color:#102a43}
-.summary small{color:#52637a}
+h1{margin:0;font-size:2.25rem;letter-spacing:-.04em;color:#7a3f11}
+.subtitle{margin:8px 0 0;color:#8e5f35;line-height:1.6}
+.toolbar{display:flex;align-items:center;gap:14px}
+.summary{display:flex;gap:14px;align-items:center}
+.summary div{background:rgba(242,190,147,.3);padding:12px 16px;border-radius:16px;min-width:104px;text-align:center}
+.summary strong{display:block;font-size:1.4rem;color:#5f330f}
+.summary small{color:#8e5f35}
+#theme-toggle{padding:12px 16px;border-radius:999px;border:1px solid rgba(151,85,13,.2);background:rgba(255,228,196,.8);color:#7a3f11;font-weight:700;cursor:pointer;transition:transform .2s ease,background .2s ease}
+#theme-toggle:hover{transform:translateY(-1px);background:rgba(255,224,188,.95)}
 form{display:grid;grid-template-columns:1fr auto;gap:12px;margin-bottom:20px}
-form input{flex:1;padding:16px 18px;border:1px solid rgba(16,42,67,.14);border-radius:20px;background:#f6fbff;color:#102a43;box-shadow:inset 0 1px 2px rgba(16,42,67,.05);font-size:1rem;transition:border-color .2s ease,box-shadow .2s ease}
-form input:focus{outline:none;border-color:#5b8cff;box-shadow:0 0 0 4px rgba(91,140,255,.12)}
-form button{padding:16px 22px;border:none;background:linear-gradient(135deg,#2563eb,#4f46e5);color:#fff;font-weight:700;border-radius:20px;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease,filter .2s ease}
-form button:hover{transform:translateY(-1px);box-shadow:0 16px 30px rgba(37,99,235,.22);filter:brightness(1.02)}
-.status-bar{padding:14px 18px;border-radius:18px;background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.12);color:#1d4ed8;font-weight:600;margin-bottom:18px}
+form input{flex:1;padding:16px 18px;border:1px solid rgba(151,85,13,.16);border-radius:20px;background:#fff6f0;color:#4d250c;box-shadow:inset 0 1px 2px rgba(151,85,13,.08);font-size:1rem;transition:border-color .2s ease,box-shadow .2s ease}
+form input:focus{outline:none;border-color:#e38a4a;box-shadow:0 0 0 4px rgba(227,138,74,.14)}
+form button{padding:16px 22px;border:none;background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;font-weight:700;border-radius:20px;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease,filter .2s ease}
+form button:hover{transform:translateY(-1px);box-shadow:0 16px 30px rgba(217,119,6,.22);filter:brightness(1.02)}
+.status-bar{padding:14px 18px;border-radius:18px;background:rgba(254,215,170,.4);border:1px solid rgba(251,146,60,.25);color:#92400e;font-weight:700;margin-bottom:18px}
 #lista-tarefas{list-style:none;padding:0;margin:0}
-.tarefa{display:flex;align-items:center;gap:14px;padding:18px 20px;border-radius:22px;background:#fff;border:1px solid rgba(15,23,42,.08);margin-bottom:14px;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
-.tarefa:hover{transform:translateY(-2px);box-shadow:0 20px 35px rgba(15,23,42,.08);background:rgba(59,130,246,.04)}
-.tarefa label{flex:1;color:#102a43;font-size:1rem;line-height:1.6}
-.tarefa.completed{opacity:.78}
-.tarefa.completed label{text-decoration:line-through;color:#64748b}
-.tarefa input[type=checkbox]{width:20px;height:20px;accent-color:#2563eb;cursor:pointer;flex-shrink:0}
+.tarefa{display:flex;align-items:center;gap:14px;padding:18px 20px;border-radius:22px;background:#fff3eb;border:1px solid rgba(151,85,13,.15);margin-bottom:14px;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+.tarefa:hover{transform:translateY(-2px);box-shadow:0 20px 35px rgba(151,85,13,.1);background:rgba(254,215,170,.24)}
+.tarefa label{flex:1;color:#5f330f;font-size:1rem;line-height:1.6}
+.tarefa.completed{opacity:.82}
+.tarefa.completed label{text-decoration:line-through;color:#9d6b4b}
+.tarefa input[type=checkbox]{width:20px;height:20px;accent-color:#d97706;cursor:pointer;flex-shrink:0}
 .controls{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
-.controls button{padding:16px 18px;border-radius:20px;border:1px solid rgba(37,99,235,.18);background:#fff;color:#1e3a8a;font-weight:700;cursor:pointer;transition:transform .2s ease,background .2s ease,border-color .2s ease}
-.controls button:hover{transform:translateY(-1px);background:rgba(37,99,235,.08);border-color:rgba(37,99,235,.3)}
-.delete{background:transparent;border:0;color:#ef4444;cursor:pointer;font-weight:700;transition:color .2s ease}
-.delete:hover{color:#b91c1c}
+.controls button{padding:16px 18px;border-radius:20px;border:1px solid rgba(151,85,13,.18);background:#fff3eb;color:#7a3f11;font-weight:700;cursor:pointer;transition:transform .2s ease,background .2s ease,border-color .2s ease}
+.controls button:hover{transform:translateY(-1px);background:rgba(251,146,60,.12);border-color:rgba(217,119,6,.28)}
+.delete{background:transparent;border:0;color:#c2410c;cursor:pointer;font-weight:700;transition:color .2s ease}
+.delete:hover{color:#9a3412}
+body.dark-mode{background:linear-gradient(180deg,#2c1a12 0%,#422b1d 43%,#523827 100%);color:#f8e7d2}
+body.dark-mode .card{background:rgba(29,17,11,.95);border:1px solid rgba(255,255,255,.08);box-shadow:0 32px 90px rgba(0,0,0,.35)}
+body.dark-mode h1{color:#ffe3c1}
+body.dark-mode .subtitle{color:#f6d3b2}
+body.dark-mode .summary div{background:rgba(255,185,115,.14)}
+body.dark-mode .summary strong{color:#ffd9b4}
+body.dark-mode .summary small{color:#f4d1a5}
+body.dark-mode #theme-toggle{background:rgba(255,199,117,.16);color:#f59e0b;border-color:rgba(255,199,117,.3)}
+body.dark-mode form input{background:rgba(255,255,255,.08);color:#f8e7d2;border-color:rgba(255,255,255,.12);box-shadow:none}
+body.dark-mode form input:focus{box-shadow:0 0 0 4px rgba(255,199,117,.16)}
+body.dark-mode form button{background:linear-gradient(135deg,#fb923c,#c2410c)}
+body.dark-mode .status-bar{background:rgba(255,183,77,.15);border-color:rgba(255,183,77,.24);color:#ffe4c0}
+body.dark-mode .tarefa{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.08)}
+body.dark-mode .tarefa:hover{background:rgba(255,183,77,.12);box-shadow:0 20px 35px rgba(0,0,0,.18)}
+body.dark-mode .tarefa label{color:#f8e7d2}
+body.dark-mode .tarefa.completed label{color:#d8bfa3}
+body.dark-mode .controls button{background:rgba(255,255,255,.08);color:#fed7aa;border-color:rgba(255,255,255,.14)}
+body.dark-mode .controls button:hover{background:rgba(255,183,77,.12)}
+body.dark-mode .delete{color:#fb923c}
 @media (max-width:640px){body{padding:20px}.card{padding:28px}.header{flex-direction:column;align-items:flex-start}.summary{width:100%;justify-content:space-between}.controls{grid-template-columns:1fr}}
